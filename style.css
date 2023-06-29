@@ -1,0 +1,372 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Mono:wght@700&display=swap");
+
+:root {
+    /* Primary colors */
+
+    --strong-cyan: hsl(172, 67%, 45%);
+
+    /* Neutral colors */
+    --very-dark-cyan: hsl(183, 100%, 15%);
+    --dark-grayish-cyan: hsl(186, 14%, 43%);
+    --grayish-cyan: hsl(184, 14%, 56%);
+    --light-grayish-cyan: hsl(185, 41%, 84%);
+    --very-light-grayish-cyan: hsl(189, 41%, 97%);
+    --white: hsl(0, 0%, 100%);
+
+}
+
+* {
+    font-family: "Space Mono", monospace;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+input[type="number"] {
+    font-size: 24px;
+    border: none;
+    -moz-appearance: textfield;
+    /* Firefox */
+    appearance: textfield;
+    -webkit-appearance: textfield;
+    /* Safari and Chrome */
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+
+.hidden {
+    display: none;
+}
+
+body {
+    background-color: var(--light-grayish-cyan);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* justify-content: center; */
+    height: 100vh;
+    width: 100vw;
+}
+
+main {
+    margin-top: 9.5rem;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: space-around; */
+    max-width: 920px;
+    gap: 80px;
+    /* height: 800px; */
+}
+
+main>div:first-child {
+    display: flex;
+    justify-content: center;
+}
+
+main>div:first-child>h1 {
+    text-transform: uppercase;
+    word-wrap: break-word;
+    width: 6.5rem;
+    color: var(--dark-grayish-cyan);
+    text-align: center;
+    font-size: 1.5rem;
+    letter-spacing: .6rem;
+}
+
+.main-container {
+    background-color: var(--white);
+    border-radius: 1.5rem;
+    padding: 2.1rem 2rem;
+    display: flex;
+    gap: 2rem;
+    box-shadow: -20px 20px 69px -65px rgba(0, 0, 0, 1);
+}
+
+.main-container>section>form:nth-child(1) {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.main-container section {
+    width: 50%;
+}
+
+
+.main-container .custom-input {
+    display: flex;
+    flex-direction: row;
+    background-color: var(--very-light-grayish-cyan);
+    border-radius: .5rem;
+    padding: 0 .8rem;
+    position: relative;
+}
+
+
+
+
+.main-container .custom-input input[type="number"] {
+    color: var(--very-dark-cyan);
+}
+
+.main-container input[type="number"]:focus {
+    outline: none;
+}
+
+.main-container .custom-input:focus-within {
+    outline: 2px solid var(--strong-cyan);
+}
+
+.main-container .custom-input>input:invalid+.custom-input {
+    outline: 2px solid crimson !important;
+}
+
+.main-container .custom-input.error {
+    outline: 2px solid rgba(255, 0, 0, 0.37);
+    ;
+}
+
+.main-container .custom-input.error::after {
+    content: "Can't be zero";
+    position: absolute;
+    bottom: 100%;
+    right: 0;
+    color: rgba(255, 0, 0, 0.37);
+    margin-bottom: .2rem;
+}
+
+
+.main-container fieldset input[type="number"]:focus:invalid {
+    outline: 2px solid rgba(255, 0, 0, 0.37);
+}
+
+.main-container fieldset input[type="number"]:invalid {
+    outline: 2px solid rgba(255, 0, 0, 0.37);
+}
+
+
+.main-container .custom-input>input,
+input::placeholder {
+    text-align: right;
+}
+
+.main-container .custom-input input::placeholder {
+    color: var(--grayish-cyan);
+}
+
+.main-container .custom-input input {
+    background-color: transparent;
+    width: 100%;
+    padding: .35rem;
+}
+
+.main-container .custom-input img {
+    aspect-ratio: 1/1;
+    object-fit: contain;
+    width: .6rem;
+}
+
+.main-container fieldset {
+    border: none;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-rows: repeat(2, minmax(0, 1fr));
+    gap: 1rem;
+    /* row-gap: 1rem; */
+}
+
+.main-container fieldset input[type="radio"] {
+    border: none;
+    display: none;
+}
+
+.main-container fieldset input[type="number"] {
+    background-color: var(--very-light-grayish-cyan);
+    border-radius: .5rem;
+    caret-color: var(--strong-cyan);
+}
+
+.main-container fieldset input[type="number"]::placeholder {
+    text-align: center;
+
+}
+
+.main-container fieldset input[type="number"] {
+    padding: .4rem 0;
+    color: var(--very-dark-cyan);
+    text-align: right;
+    padding: 0rem 0.5rem;
+}
+
+.main-container>section form>div:nth-child(2) {
+    display: flex;
+    flex-direction: column;
+    gap: .95rem;
+}
+
+
+.main-container fieldset input[type="number"]:focus {
+    outline: 2px solid var(--strong-cyan);
+}
+
+
+
+
+.main-container fieldset label {
+    background-color: var(--very-dark-cyan);
+    color: var(--white);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: .5rem;
+    font-size: 24px;
+    padding: .4rem 0;
+}
+
+.main-container fieldset label:focus {
+    outline: none;
+    background-color: hsla(172, 67%, 45%, 0.4);
+    color: var(--very-dark-cyan);
+}
+
+.main-container fieldset>legend,
+.main-container label {
+    color: var(--dark-grayish-cyan);
+}
+
+.main-container fieldset label {
+    cursor: pointer;
+}
+
+.main-container section>form>div {
+    display: flex;
+    flex-direction: column;
+    gap: .2rem;
+}
+
+.main-container section:nth-child(2) {
+    background-color: var(--very-dark-cyan);
+    color: var(--white);
+    display: flex;
+    flex-direction: column;
+    gap: 1.6rem;
+    padding: 2.5rem;
+    border-radius: 1rem;
+}
+
+.main-container section:nth-child(2) div {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.main-container section:nth-child(2) div p:nth-child(1) {
+    display: flex;
+    flex-direction: column;
+}
+
+.main-container section:nth-child(2) div p:nth-child(1) span {
+    color: var(--grayish-cyan);
+    font-size: 12px;
+}
+
+.main-container section:nth-child(2) div p:nth-child(2) {
+    color: var(--strong-cyan);
+    font-size: 3rem;
+}
+
+.main-container section:nth-child(2) div:nth-child(3) {
+    margin-top: auto;
+}
+
+.main-container section:nth-child(2) div>button {
+    width: 100%;
+    text-transform: uppercase;
+    border: none;
+    font-size: 1.25rem;
+    border-radius: .2rem;
+    padding: .56rem 0;
+    background-color: var(--strong-cyan);
+}
+
+.main-container section:nth-child(2) div>button:hover {
+    cursor: pointer;
+    background-color: rgb(132, 245, 230);
+    color: var(--very-dark-cyan);
+}
+
+.main-container section:nth-child(2) div>button:disabled {
+    opacity: .3;
+    pointer-events: none;
+}
+
+.main-container section:nth-child(1)>form {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    padding: 1rem;
+}
+
+
+.main-container section:nth-child(1) fieldset input[type="radio"]:checked+label {
+    background-color: var(--strong-cyan);
+    color: var(--very-dark-cyan);
+}
+
+.main-container section:nth-child(1) fieldset label:hover {
+    background-color: hsla(172, 67%, 45%, 0.4);
+    color: var(--very-dark-cyan);
+}
+
+@media screen and (max-width:600px) {
+    main {
+        margin-top: 2.6rem;
+        gap: 30px;
+    }
+
+    .main-container {
+        flex-direction: column;
+        padding: 1rem;
+        gap: 1rem;
+        height: 100%;
+    }
+
+    .main-container>section {
+        width: 100%;
+    }
+
+    .main-container section>form>div:nth-child(2)>fieldset {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-template-rows: repeat(3, minmax(0, 1fr));
+        gap: .9rem;
+    }
+
+    .main-container section>form>div:nth-child(2)>fieldset input[type="number"]::placeholder {
+        text-align: right;
+    }
+
+    .main-container section>form>div:nth-child(2)>fieldset input[type="number"] {
+        padding: 0rem 1rem;
+    }
+
+    .main-container section>form>div {
+        gap: .5rem;
+    }
+
+    .main-container section:nth-child(1)>form {
+        gap: 32px;
+    }
+
+    .main-container section:nth-child(2) div p:nth-child(2) {
+        font-size: 1.9rem;
+    }
+
+    .main-container section:nth-child(2) {
+        padding: 2.3rem 2rem 2rem 2rem;
+    }
+}
